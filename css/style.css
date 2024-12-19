@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: cadetblue;
+    flex-direction: column;
+}
+
+body.default {
+    background-color: cadetblue;
+}
+
+body.oscura {
+    background-color: #1b1b1b;
+}
+
+body.verano {
+    background-color: #a78300;
+}
+
+.entrada-nombre {
+    margin-top: 20px;
+    text-align: center;
+    color: whitesmoke;
+}
+
+.entrada-nombre label {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.entrada-nombre input {
+    padding: 5px;
+    font-size: 1.2rem;
+}
+
+.entrada-nombre button {
+    padding: 5px 10px;
+    font-size: 1.2rem;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.selector-tematica {
+    margin-top: 20px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.selector-tematica label {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.selector-tematica select {
+    padding: 5px;
+    font-size: 1.2rem;
+}
+
+.tabla-clasificacion {
+    margin-top: 20px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.tabla-clasificacion h2 {
+    margin-bottom: 10px;
+}
+
+.tabla-clasificacion ol {
+    list-style-type: decimal;
+    padding-left: 0;
+}
+
+.tabla-clasificacion li {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.contenedor-juego {
+    display: flex;
+    width: 80vmin;
+    height: 80vmin;
+    overflow: hidden;
+    flex-direction: column;
+    background-color: #333;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid white;
+}
+
+.contenedor-juego.oscura {
+    background-color: #2b2b2b;
+}
+
+.contenedor-juego.verano {
+    background-color: #ffe600;
+}
+
+.detalles-juego {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 27px;
+}
+
+.play-board {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: repeat(25, 1fr);
+    grid-template-columns: repeat(25, 1fr);
+    gap: 2px;
+    border: 2px solid white;
+}
+
+.play-board.oscura .comida,
+.play-board.verano .comida {
+    background-color: red;
+}
+
+.play-board.oscura .serpiente,
+.play-board.verano .serpiente,
+.play-board .serpiente {
+    background-color: yellowgreen;
+    border-radius: 4px;
+}
+
+.play-board .comida {
+    background-color: red;
+    border-radius: 100%;
+}
+
+.usuario-actual {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: white; /* Cambiado a blanco */
+    text-align: center; /* Centramos el texto para mejor visibilidad */
+}
+
+/* Nuevas clases para el nombre del usuario */
+.colores {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.5s;
+}
+
+.colores.default {
+    color: whitesmoke;
+}
+
+.colores.oscura {
+    color: white;
+}
+
+.colores.verano {
+    color: black;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-ok-button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Medidas para móviles */
+@media (max-width: 768px) {
+    .contenedor-juego {
+        width: 90vmin;
+        height: 90vmin;
+    }
+
+    .detalles-juego {
+        font-size: 1.2rem;
+        padding: 10px 15px;
+    }
+
+    .entrada-nombre input,
+    .entrada-nombre button,
+    .selector-tematica select {
+        font-size: 1rem;
+        padding: 4px;
+    }
+
+    .entrada-nombre label,
+    .selector-tematica label {
+        font-size: 1rem;
+    }
+
+    .tabla-clasificacion li {
+        font-size: 1rem;
+    }
+
+    .tabla-clasificacion h2 {
+        font-size: 1.2rem;
+    }
+}

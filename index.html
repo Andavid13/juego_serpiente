@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de la Serpiente</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="default">
+    <div class="entrada-nombre">
+        <label for="nombre-usuario">Ingresa tu nombre: </label>
+        <input type="text" id="nombre-usuario" placeholder="">
+        <button id="boton-comenzar">Comenzar Juego</button>
+    </div>
+    <div class="selector-tematica">
+        <label for="tematica">Elige una temática: </label>
+        <select id="tematica">
+            <option value="default">Predeterminada</option>
+            <option value="oscura">Oscura</option>
+            <option value="verano">Verano</option>
+        </select>
+    </div>
+    <div class="tabla-clasificacion">
+        <h2>Tabla de Clasificación</h2>
+        <ol id="lista-puntuaciones"></ol>
+    </div>
+    <div class="contenedor-juego" id="contenedor-juego" style="display:none;">
+        <div class="detalles-juego">
+            <div class="score">Puntos: 0</div>
+        </div>
+        <div class="play-board"></div>
+    </div>
+    <audio id="sonido-mover" src="audio/mover.mp3"></audio>
+    <audio id="sonido-comer" src="audio/comer.mp3"></audio>
+    <audio id="sonido-fin" src="audio/fin.mp3"></audio>
+
+    <!-- Modal para alertas -->
+    <div id="modal-alert" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="close-button">&times;</span>
+            <p id="modal-message"></p>
+            <button id="modal-ok-button">OK</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
